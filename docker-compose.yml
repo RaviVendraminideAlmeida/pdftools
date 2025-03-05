@@ -1,0 +1,18 @@
+services:
+  php:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./src/:/var/www/html
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postdba 
+      POSTGRES_DB: pdftools 
+    ports:
+      - "5433:5432"
+
