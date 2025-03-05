@@ -8,7 +8,7 @@ class Connection
 {
     private string $dsn = 'pgsql:host=postgres;dbname=pdftools;user=postgres;password=postdba';
 
-    private PDO $pdo;
+    private Connection $connection = new Connection();
 
     public function __construct()
     {
