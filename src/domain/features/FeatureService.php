@@ -11,10 +11,32 @@ class FeatureService
 {
 
 
-    private $pdo = new Connection();
+    private $connection = new Connection();
 
     private function findAllFeatures(){
-        return null;
+
+        $sql = '    SELECT * FROM features      ';
+
+        $dbh = $this->connection->getPDO(); 
+
+        $rs = $dbh->query($sql);
+
+        $features = [];
+
+        foreach($rs as $feature){
+
+            $feature = new Feature();
+
+            $feature->setId();
+
+            array_push($features, )
+
+
+        }
+
+
+        
+
     }
 }
 
